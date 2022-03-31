@@ -78,6 +78,7 @@ input[type="submit"] {
   width: 100%;
   transition: background-color 0.3s ease;
   box-shadow: 0 8px 5px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 @media (min-width: 768px) {
   input[type="submit"] {
@@ -86,6 +87,13 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
   background-color: #edbb17;
+}
+
+.alert {
+  text-align: center;
+  background-color: #dc2626;
+  padding: 0.3rem;
+  color: #fff;
 }
 
 .loading {

@@ -1,21 +1,42 @@
-import React from "react";
+import { useState } from "react";
+import useWeather from "../hooks/useWeather";
 
 const Form = () => {
+  const [alert, setAlert] = useState("");
+
+  const { search, dataSearch, searchWeather } = useWeather();
+  console.log(search);
+
+  const { ciudad, pais } = search;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (Object.values(search).includes("")) {
+      setAlert("Todos los campos son obligatorios");
+      return;
+    }
+    setAlert("");
+  };
+
   return (
     <div className="contenedor">
-      <form>
+      {alert && <p className="alert">{alert}</p>}
+      <form onSubmit={handleSubmit}>
         <div className="campo">
           <label htmlFor="ciudad">Ciudad</label>
           <input
             type="text"
             id="city"
-            name="city"
+            name="ciudad"
             placeholder="Ciudad a consultar"
+            onChange={dataSearch}
+            value={ciudad}
           />
         </div>
         <div className="campo">
           <label htmlFor="country">País</label>
-          <select id="country" name="country">
+          <select id="country" name="pais" onChange={dataSearch} value={pais}>
             <option value="">-Selecciona un país-</option>
             <option value="US">Estados Unidos</option>
             <option value="MX">México</option>
