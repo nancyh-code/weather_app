@@ -5,7 +5,7 @@ const Form = () => {
   const [alert, setAlert] = useState("");
 
   const { search, dataSearch, searchWeather } = useWeather();
-  console.log(search);
+  // console.log(search);
 
   const { ciudad, pais } = search;
 
@@ -16,6 +16,7 @@ const Form = () => {
       setAlert("Todos los campos son obligatorios");
       return;
     }
+    searchWeather(search);
     setAlert("");
   };
 
