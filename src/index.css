@@ -100,6 +100,27 @@ input[type="submit"]:hover {
   color: #fff;
 }
 
+.clima {
+}
+
+.clima p,
+.clima h2 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.clima > p:first-of-type {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+.temp_min_max {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 0;
+}
+
 .loading {
   display: flex;
   justify-content: center;
