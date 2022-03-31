@@ -6,17 +6,21 @@ body {
 }
 header {
   background-color: #ecc94b;
-  background-color: rgba(236, 201, 75, 0.65);
   padding: 1.5rem;
   /* border-bottom: 0.2rem solid #0284c7; */
   box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
-header h1 {
+h1 {
   text-align: center;
   color: #2a4365;
   font-family: "Inter", sans-serif;
   font-size: 3rem;
   margin: 0;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 .dos-columnas {
   display: grid;
@@ -33,12 +37,11 @@ main {
 }
 .contenedor {
   margin: 0 auto 2rem auto;
-  border-radius: 0.5rem;
-  background-color: rgba(250, 250, 246248, 0.75);
+  background-color: rgba(250, 250, 246248, 0.76);
   padding: 4rem;
-  -webkit-box-shadow: 0px 10px 33px -17px rgba(173, 173, 173, 1);
-  -moz-box-shadow: 0px 10px 33px -17px rgba(173, 173, 173, 1);
-  box-shadow: 0px 10px 33px -17px rgba(173, 173, 173, 1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   width: 100%;
   color: #2a4365;
   font-weight: bold;
@@ -47,7 +50,7 @@ form {
   width: 100%;
 }
 .campo {
-  min-width: 8rem;
+  width: 19rem;
   margin: 0 auto 1rem auto;
   /* color: #2a4365;
   font-weight: bold; */
@@ -59,7 +62,7 @@ form {
 .campo select {
   all: unset;
   border: 2px solid #ecc94b;
-  width: 96%;
+  width: 94%;
   border-radius: 1rem;
   padding: 0.5rem;
 }
@@ -79,10 +82,11 @@ input[type="submit"] {
   transition: background-color 0.3s ease;
   box-shadow: 0 8px 5px 6px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  cursor: pointer;
 }
 @media (min-width: 768px) {
   input[type="submit"] {
-    min-width: 8rem;
+    width: 19rem;
   }
 }
 input[type="submit"]:hover {
