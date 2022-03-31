@@ -10,6 +10,7 @@ const WeatherProvider = ({ children }) => {
   });
 
   const [result, setResult] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   const dataSearch = (e) => {
     setSearch({
@@ -19,6 +20,7 @@ const WeatherProvider = ({ children }) => {
   };
 
   const searchWeather = async (datos) => {
+    setIsLoading(true);
     try {
       const { ciudad, pais } = datos;
 
@@ -33,13 +35,18 @@ const WeatherProvider = ({ children }) => {
       //Destructuring permite renombrar una variable
       const { data: weather } = await axios(urlWeather);
       setResult(weather);
+      // También se puede colocar el setIsLoading aquí:
+      // setIsLoading(false);
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   };
+
   return (
     <WeatherContext.Provider
-      value={{ search, dataSearch, searchWeather, result }}
+      value={{ search, dataSearch, searchWeather, result, isLoading }}
     >
       {children}
     </WeatherContext.Provider>
